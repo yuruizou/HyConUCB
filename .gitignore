@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv*/
+.pytest_cache/
+.ruff_cache/
+results/
+figures/
+/yelp/data/
+/llm/data/raw/
+/llm/data/rebuilt/
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,9 @@
+-r requirements.txt
+scikit-learn==1.9.1
+pyarrow==21.0.0
+huggingface-hub==1.33.0
+sentence-transformers==6.1.0
+transformers==5.19.0
+tokenizers==0.23.2
+safetensors==0.8.0
+torch==2.11.0

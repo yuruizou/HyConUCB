@@ -1,0 +1,75 @@
+{
+  "dataset": "ulab-ai/xRouteBench",
+  "configuration": "llmrouter_generic",
+  "dataset_revision": "ea4b6e1b29d9a734f55f0a637baf326bad6aa681",
+  "dataset_source_files_sha256": {
+    "train": "6ae53d6b619396271e345a242bd32c253fc9796a45a75d3c122ad74843f8a7ef",
+    "test": "cc7f33f03298c734c1f4b3c380d8d9b84dc8723eb0d08f850de033d2645778f4"
+  },
+  "models": [
+    "Qwen3-Coder-Next",
+    "Llama-4-Maverick",
+    "Mistral-Small-3-24B-Instruct",
+    "Llama-3.3-70B-Instruct-Turbo"
+  ],
+  "model_ids": [
+    "qwen3-coder-next",
+    "llama-4-maverick",
+    "mistral-small-3-24b-instruct",
+    "llama-3.3-70b-instruct-turbo"
+  ],
+  "tasks": [
+    "arc_challenge",
+    "gsm8k",
+    "math",
+    "mmlu"
+  ],
+  "expert_model_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "dimension": 21,
+  "split": {
+    "fractions": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "unit": "task and exact query text",
+    "construction_records": 2279,
+    "validation_records": 761,
+    "final_records": 760,
+    "official_train_and_test_combined": true
+  },
+  "embedding": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "text_template": "Query: {query}",
+    "max_sequence_length": 512,
+    "normalized": true
+  },
+  "features": {
+    "classifier": "construction-only multinomial logistic ridge",
+    "classifier_C": 30.0,
+    "posterior": "four probabilities, construction-mean centered, one group scale to mean squared energy 3",
+    "model_block": "[1, scaled centered posterior] normalized to 1/sqrt(2)",
+    "global_intercept": 0.7071067811865475,
+    "unit_arm_norm": true
+  },
+  "theta_fit": {
+    "scope": "construction-only binary correctness",
+    "method": "unregularized minimum-norm logistic MLE",
+    "norm": 5.5038746460825445,
+    "online_bound_S": 6.0
+  },
+  "arm_feedback": "actual logged binary correctness",
+  "conversation_feedback": "logistic-Bernoulli draws from theta_environment",
+  "reference_versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1"
+  },
+  "benchmark_sha256": "60386a2a5bd9b2fd3daefd228900f4eaded9b3c8f2af6459fd831f3ec81c782a"
+}
